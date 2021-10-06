@@ -2,3 +2,9 @@
 	margin-top: 33px;
     margin-left: -49px;
 }
+.error{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:red
+}
