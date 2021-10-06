@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validations</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="form.js" ></script>
+<link rel="stylesheet" type="text/css" href="form.css">>
+</head>
+<body>
+<div class="container">
+	<form href="#" method="post"> 
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>First Name</label>
+					<input type="text" name="fname" id="fname" class="form-control">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Last Name</label>
+					<input type="text" name="lname"  id="lname" class="form-control">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>E-mail</label>
+					<input type="text" name="email" id="email" class="form-control">
+					
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Phone</label>
+					<input type="tel" name="phone" id="phone" class="form-control" pattern="[0-9]{10}">
+				
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label>Password</label>
+					<input type="Password" name="pswd" id="pswd" class="form-control">
+				</div>
+			</div>
+			<div class="col-md-1">
+				<span class="glyphicon glyphicon-eye-open" onclick="show(1);"></span>
+			</div>
+			
+			<div class="col-md-5">
+				<div class="form-group">
+					<label>Confirm Password</label>
+					<input type="Password" name="cpswd" id="cpswd" class="form-control" >
+
+				</div>
+			</div>
+			<div class="col-md-1">
+				<span class="glyphicon glyphicon-eye-open" onclick="show(2);"></span>
+			</div>
+		</div>
+		<input type="button" class="btn btn-submit" onclick="return submitForm();" value="on">
+		<!-- <button onclick="submitForm();">Submit</button> -->
+	</form>
+</div>
+</body>
+</html>
