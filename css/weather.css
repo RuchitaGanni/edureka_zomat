@@ -1,0 +1,47 @@
+.jumbotron{
+    background-image: url("../images/weather.jpg");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fa-cloud{
+    width:30px;
+    color:white
+}
+#title{
+    font-size:30px;
+    color:white;
+}
+.form-control{
+    width:100%;
+}
+#display{
+    font-size:30px;
+    color:white;
+    background-color:gray;
+}
+.vals_day{
+    height:300px;
+    margin-left: 2px;
+    background-color:rgba(201, 122, 23,0.5);
+    float:right;
+    border-radius:8px;
+}
+.vals_night{
+    height:300px;
+    margin-left: 2px;
+    background-color:rgba(19, 35, 39, 0.212);
+    float:right;
+    border-radius:8px;
+}
+#temp_val{
+    font-size:40px;
+    color:white;
+}
+.fa-moon-o,.fa-star-o{
+   color:white;
+}
+.fa-sun-o{
+    color:orangered;
+}
+
