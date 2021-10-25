@@ -7,6 +7,8 @@ var submitForm = () => {
 	var fname = document.getElementById('fname').value;
 	if (fname.length != 0) {
 		document.getElementById('fname').style.border = "3px solid green";
+		var n = fname.charAt(0).toUpperCase()+fname.slice(1).toLowerCase()
+        document.getElementById('fname').value = n
 	} else {
 		document.getElementById('fname').style.border = "3px solid red";
 		document.getElementById('error_fname').innerHTML = "First name cannot be empty"
@@ -15,6 +17,8 @@ var submitForm = () => {
 	var lname = document.getElementById('lname').value;
 	if (lname.length != 0) {
 		document.getElementById('lname').style.border = "3px solid green";
+		var l = lname.charAt(0).toUpperCase()+lname.slice(1).toLowerCase()
+        document.getElementById('lname').value = l
 	} else {
 		document.getElementById('lname').style.border = "3px solid red";
 		document.getElementById('error_lname').innerHTML = "Last name cannot be empty"
