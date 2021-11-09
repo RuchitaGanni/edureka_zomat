@@ -1,5 +1,6 @@
 .jumbotron{
-    background-image: url("../images/weather.jpg");
+    /* background-color:rgba(201, 122, 23,0.5); */
+    background-image: url("../images/weather2.jpg");
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,33 +16,51 @@
 .form-control{
     width:100%;
 }
-#display{
+#display,#loc{
     font-size:30px;
-    color:white;
-    background-color:gray;
+    color:rgb(247, 247, 247);
+    font-weight:30px;
+    font-family: 'Segoe UI';
+    /* background-color:gray; */
+}
+.fa-map-marker{
+    /* font-size:30px; */
+    color:rgb(247, 247, 247);
+    /* font-weight:30px; */
 }
 .vals_day{
-    height:300px;
+    height:200px;
     margin-left: 2px;
-    background-color:rgba(201, 122, 23,0.5);
+    /* background-color:rgba(201, 122, 23,0.5); */
     float:right;
     border-radius:8px;
 }
 .vals_night{
-    height:300px;
+    height:200px;
     margin-left: 2px;
-    background-color:rgba(19, 35, 39, 0.212);
+    /* background-color:rgba(6, 8, 14, 0.74); */
     float:right;
     border-radius:8px;
 }
 #temp_val{
     font-size:40px;
     color:white;
+    display: inline-block;
+    position: relative;
 }
 .fa-moon-o,.fa-star-o{
    color:white;
 }
 .fa-sun-o{
-    color:orangered;
+    color:#f7c009;
+}
+.fa-search{
+    margin-left: -60px;
+}
+#unit{
+    font-size:20px;
+    margin-left:84px;
+    margin-top: 30px;
+
 }
 
