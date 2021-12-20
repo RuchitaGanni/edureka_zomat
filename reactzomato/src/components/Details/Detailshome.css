@@ -1,0 +1,87 @@
+.top1{
+    height:420px;
+    width:100%;
+}
+
+.restMainDiv{
+    float: left;
+}
+
+.restImageDiv{
+    height:400px;
+    width:500px;
+    background-color: yellow;
+    float:left;
+}
+.restExtraDiv{
+    height:400px;
+    width:400px;
+    /* background-color:red; */
+    float:left;
+    margin-left: 20px;
+}
+#restImage{
+    height:400px;
+    width:100%;
+}
+.restStarInfo{
+    /* background-color:pink; */
+    height:40px;
+    width:60%;
+    font-size: 30px;
+    /* margin-left: 20px; */
+}
+#label{
+    background-color:green !important;
+}
+
+.itemsDiv33{
+   
+    height:400px;
+    width:100%;
+    /* background-color:rgb(30, 83, 5); */
+    
+}
+#orderLine{
+    width:100%;
+}
+.card{
+    height:150px;
+    width:80%;
+    /* margin-left: 5%; */
+    margin-top: 2%;
+    box-shadow:10px 10px 20px gray;
+    border-radius: 20px;
+    float: left;
+    
+}
+
+.cardImage{
+    height: 70%;
+    width: 60%;
+    
+    margin-top:5%;
+    border-radius: 10px;
+}
+.itemImg{
+    width: 20%;
+    height:100%;
+    float: left;
+    margin-left:3%;
+}
+.itemdetails{
+    width: 40%;
+    margin-top:2%;
+    float: left;
+}
+.btnsDiv{
+    width:20%;
+    float: left;
+    margin-top:5%;
+}
+.itemName{
+    font-size: 20px;
+}
+.itemPrice{
+    font-size: 15px;
+}
