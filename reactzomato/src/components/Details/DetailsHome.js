@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import axios from 'axios'
 import './Detailshome.css'
 import MenuItems from './MenuItems'
@@ -11,21 +13,34 @@ class DetailsHome extends Component {
         this.state = {
             restData: '',
             menu: '',
-            userItem:''
+            userItem: '',
+            total: 0
         }
-         
+
 
     }
-    addToCart=(data)=>{
-        this.setState({userItem:data});
-        console.log(this.state.userItem,'U')
+    addToCart = (data, check, cost) => {
+        console.log(cost, 'c', check, data)
+
+        this.setState({ userItem: data });
+
+        if (check !== 0 && this.state.total >= 0) {
+            this.setState({ total: this.state.total + Number(cost) });
+        } else if (check === 0 && this.state.total >= 0) {
+            this.setState({ total: this.state.total - Number(cost) });
+        }
+
+    }
+    proceed = () => {
+        sessionStorage.setItem('menu', this.state.userItem);
+        this.props.history.push(`/placeOrder/${this.state.restData.restaurant_name}`)
     }
     render() {
         return (
             <Fragment>
 
                 <div className="container">
-                {/* <Link to='/'><span class="label label-default bdcrm">Home</span></Link>
+                    {/* <Link to='/'><span class="label label-default bdcrm">Home</span></Link>
                     <span class=" bdcrm">/</span>
                     <span class="label label-info bdcrm">{this.state.product_category_name}</span> */}
                     <div class="top1">
@@ -50,15 +65,37 @@ class DetailsHome extends Component {
                                 <span className="label label-success" id="label">
                                     {this.state.restData.average_rating}<i class="fa fa-star" ></i>
                                 </span>
+                                <button className="btn btn-danger" onClick={this.proceed} ><span id="placeOrdertxt">Place Order</span></button>
+                            </div>
+                            <div>
+                                <h3>Order Total: {this.state.total} </h3>
+
                             </div>
                         </div>
                     </div>
-                    <div className="itemsDiv33">
-                        <h4>Order Online</h4>
-                        <hr id="orderLine"/>
-                        <MenuItems menuItems={this.state.menu} finalOrder={(data) => {this.addToCart(data)}}/>
+                    <div className='tabs'>
+                        <Tabs>
+                            <TabList>
+                                <Tab> <h4>Menu to Order</h4></Tab>
+                                <Tab><h4>More</h4></Tab>
+                            </TabList>
+
+                            <TabPanel>
+                                <MenuItems menuItems={this.state.menu} finalOrder={(data, check, cost) => { this.addToCart(data, check, cost) }} />
+
+
+                            </TabPanel>
+                            <TabPanel>
+                                <h2>More content</h2>
+                            </TabPanel>
+                        </Tabs>
                     </div>
-                   
+                    {/* <div className="itemsDiv33">
+                        <h4>Order Online</h4>
+                        <hr id="orderLine" />
+                        <MenuItems menuItems={this.state.menu} finalOrder={(data) => { this.addToCart(data) }} />
+                    </div> */}
+
                 </div>
             </Fragment >
         )
@@ -66,7 +103,7 @@ class DetailsHome extends Component {
     async componentDidMount() {
         const restId = this.props.match.params.restid;
         const response = await axios.get(`${resturl}/${restId}`);
-        console.log(response, 'res')
+        // console.log(response, 'res')
         const menuResponse = await axios.get(`${restMenu}/${restId}`)
         console.log(menuResponse, 'menuResponse')
         this.setState({ restData: response.data[0], menu: menuResponse.data })

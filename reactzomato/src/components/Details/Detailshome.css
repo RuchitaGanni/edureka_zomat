@@ -34,6 +34,9 @@
 #label{
     background-color:green !important;
 }
+#placeOrdertxt{
+    font-size:18px;
+}
 
 .itemsDiv33{
    
@@ -84,4 +87,107 @@
 }
 .itemPrice{
     font-size: 15px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .top1{
+        height:320px;
+       
+    }
+    .restExtraDiv{
+        height:100px;
+        width:400px;
+        /* background-color:red; */
+        
+        margin-left: 20px;
+    }
+    .tabs{
+        margin-top:40%;
+    }
+    .card{
+       
+        width:100%;
+        /* margin-left: 5%; */
+        
+        
+    }
+    .itemImg{
+        width: 30%;
+        height:100%;
+        
+        
+    }
+    .cardImage{
+       
+        width: 90%;
+        
+    }
+    .itemdetails{
+        width: 30%;
+        margin-left: 10px;
+       
+    }
+    .itemName{
+        font-size: 18px;
+    }
+    .btnsDiv{
+        width:30%;
+        
+        margin-left: 10px;
+    }
+    .iconBtn{
+        margin-left:0px !important;
+        margin-right:2px;
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    .top1{
+        height:320px;
+       
+    }
+    .restExtraDiv{
+        height:200px;
+        width:400px;
+        /* background-color:red; */
+        
+        margin-left: 20px;
+    }
+    .card{
+        
+        width:100%;
+        /* margin-left: 5%; */
+        
+        
+    }
+    .itemImg{
+        width: 30%;
+        height:100%;
+        
+        
+    }
+    .cardImage{
+       
+        width: 90%;
+        
+    }
+    .itemdetails{
+        width: 30%;
+        margin-left: 10px;
+       
+    }
+    .itemName{
+        font-size: 18px;
+    }
+    .btnsDiv{
+        width:30%;
+        
+        margin-left: 10px;
+    }
+    .iconBtn{
+        margin-left:0px !important;
+        margin-right:2px;
+    }
+    
 }

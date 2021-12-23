@@ -3,7 +3,7 @@ import Filter from './Filter/Filter';
 import List from './List/List';
 import './MainBody.css';
 import axios from 'axios';
-const url = "https://xomato.herokuapp.com/filter";
+const url = "https://edu-zomatoapp.herokuapp.com/filter";
 class MainBody extends Component {
 
 
@@ -34,6 +34,7 @@ class MainBody extends Component {
         const mealId = this.props.match.params.mealTypeId;
         axios.get(`${url}/${mealId}`)
         .then((res) => {
+            console.log(res.data,'res')
             this.setState({restList:res.data})
         })
     }

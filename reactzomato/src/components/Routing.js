@@ -4,6 +4,7 @@ import Header from './Header/Header'
 import HomePage from './HomePage/HomePage'
 import MainBody from './MainBody/MainBody'
 import DetailsHome from './Details/DetailsHome'
+import FinalOrder from './FinalOrders/FinalOrder'
 const Routing = () => {
    
         return (
@@ -13,6 +14,7 @@ const Routing = () => {
                 <Route exact path="/" component = {HomePage}/>
                 <Route  path="/filter/:mealTypeId" component={MainBody}/>
                 <Route path="/menu/:restid" component={DetailsHome}/>
+                <Route path="/placeOrder" component={FinalOrder}/>
             </BrowserRouter>
         )
     

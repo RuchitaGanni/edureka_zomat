@@ -18,7 +18,8 @@ const List = (props) => {
                         <div className="tile_contents">
                             <div className="tile_content_top">
                                 <div className="tile_img_div">
-                                    <img src={item.restaurnat_thumb} onerror="this.onerror=null;this.src='/assests/snacks.jpg';" className="tile_image" />
+{/* onError="this.onerror=null;this.src='/assests/snacks.jpg';" */}
+                                    <img src={item.restaurant_thumb} alt={item.restaurant_name} className="tile_image" />
                                 </div>
                                 <div className="tile_text_div">
                                     <div>

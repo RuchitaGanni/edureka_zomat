@@ -10,7 +10,7 @@ class MenuItems extends Component {
     orderId = [];
     orderIds = [];
 
-    addItem = (id) => {
+    addItem = (id,cost) => {
         // console.log('click', id);
         // this.setState({ orderObj: { id: id } })
         // sessionStorage.setItem('MENUID', this.setState({ orderObj: { id: id } }));
@@ -35,7 +35,18 @@ class MenuItems extends Component {
         //         // })
         //     //}
         this.orderId.push(`${id}`)
-        this.props.finalOrder(this.orderId)
+        console.log(id,cost,'idcost')
+        this.props.finalOrder(this.orderId,1,cost)
+    }
+    removeItem = (id,cost) => {
+        //removing an single record of input order id
+        if(this.orderId.indexOf(id.toString()) <0){
+            cost=0;
+        }else{
+            this.orderId.splice(this.orderId.indexOf(id.toString()),1)
+        }
+        
+        this.props.finalOrder(this.orderId,0,cost)
     }
 
     // without porps
@@ -65,8 +76,8 @@ class MenuItems extends Component {
                             </div>
                             <div className="btnsDiv">
                                 <div>
-                                    <button className="btn btn-success" onClick={() => { this.addItem(item.menu_id) }}><i class="fa fa-plus" ></i></button>
-                                    <button className="btn btn-danger"><i class="fa fa-minus" ></i></button>
+                                    <button className="btn btn-success iconBtn"  onClick={() => { this.addItem(item.menu_id,item.menu_price) }}><i class="fa fa-plus" ></i></button>
+                                    <button className="btn btn-danger iconBtn" onClick={() => {this.removeItem(item.menu_id,item.menu_price)}}><i class="fa fa-minus" ></i></button>
                                 </div>
                             </div>
                         </div>
