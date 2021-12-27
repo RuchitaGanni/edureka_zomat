@@ -10,7 +10,7 @@
 .restImageDiv{
     height:400px;
     width:500px;
-    background-color: yellow;
+    /* background-color: yellow; */
     float:left;
 }
 .restExtraDiv{

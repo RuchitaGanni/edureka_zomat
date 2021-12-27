@@ -16,7 +16,7 @@
 }
 
 #userinfo{
-    margin-left: 850px;
+    margin-left: 800px;
 }
 #brand{
     background-color:rgb(250, 250, 250);
@@ -56,7 +56,7 @@
 
 @media screen and (max-width:1300px){
     #userinfo{
-        margin-left: 0px;
+        margin-left: 465px;
     }
 }
 

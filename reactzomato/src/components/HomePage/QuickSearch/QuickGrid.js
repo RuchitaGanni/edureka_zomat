@@ -12,7 +12,7 @@ const QuickGrid = (props) => {
 
                     return (
 
-                        <Link to={`/filter/${item.mealtype_id}`} key={item.mealtype_id}   style={{textDecoration: 'none' }} activeStyle={{textDecoration: 'none'}}>
+                        <Link to={`/filter/${item.mealtype_id}`} key={item.mealtype_id} style={{ textDecoration: 'none', cursor: 'default' }} activeStyle={{ textDecoration: 'none' }}>
                             <div id="search_items">
 
                                 <div class="srcImage">
@@ -21,8 +21,10 @@ const QuickGrid = (props) => {
 
                                 </div>
                                 <div class="srcText">
-                                    <h3 style={{ textDecoration: 'none' }}>{item.mealtype}</h3>
-                                    <p style={{ textDecoration: 'none' }}>Pass time with tasty bites</p>
+                                    {/* <h3 style={{ textDecoration: 'none' }}>{item.mealtype}</h3>
+                                    <p style={{ textDecoration: 'none' }}>Pass time with tasty bites</p> */}
+                                    <h3 id="h3txt" >{item.mealtype}</h3>
+                                    <p >Pass time with tasty bites</p>
                                 </div>
 
                             </div>
@@ -33,7 +35,7 @@ const QuickGrid = (props) => {
         }
     } else {
         renderMeal =
-            <img src="/assests/loader2.gif" alt="loading..." id="loaderGIF"  />
+            <img src="/assests/loader2.gif" alt="loading..." id="loaderGIF" />
 
     }
 

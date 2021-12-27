@@ -13,6 +13,7 @@ class Header extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
                             </button>
                             {/* <a class="navbar-brand" href="#">WebSiteName</a> */}
                             <Link to="/" className="navbar-brand">
@@ -27,7 +28,8 @@ class Header extends Component {
                             <ul className="nav navbar-nav" id="navicons">
                                 <li ><Link exact to="/" className="links">Home</Link></li>
 
-                                <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link></li>
+                                {/* <li><Link exact to="/cart" className="links"><i class="fa fa-shopping-cart" aria-hidden="true"></i></Link></li> */}
+                                <li><Link exact to="/viewOrders" className="links">Orders</Link></li>
                                 <li id="userinfo"><Link exact to="/" className="links"><i class="fa fa-user" aria-hidden="true"></i>  Hello..!! Ruchita</Link></li>
                             </ul>
                             {/* <ul className="nav navbar-nav navbar-right">

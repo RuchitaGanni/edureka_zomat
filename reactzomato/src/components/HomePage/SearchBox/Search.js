@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './Search.css';
+import {withRouter} from 'react-router-dom';
 const LocationsUrl = 'https://edu-zomatoapp.herokuapp.com/locations';
 const restaurantsUrl = 'https://edu-zomatoapp.herokuapp.com/restaurants?city='
 class Search extends Component {
@@ -37,12 +38,18 @@ class Search extends Component {
     }
     handleRest = (event) => {
         
-        console.log(event.target.value)
+        console.log(event.target.value,'11')
         fetch(`${restaurantsUrl}${event.target.value}`, { method: 'GET' })
             .then((res) => res.json())
             .then((data) => {
                 this.setState({ restaurants: data })
             })
+    }
+    // on restaurant select load details page
+    gotoRestPage=(event)=>{
+        console.log(event.target.value,'2',event.target.value);
+        this.props.history.push(`/menu/${event.target.value}`)
+
     }
     render() {
         return (
@@ -59,7 +66,7 @@ class Search extends Component {
                     </div>
                     <div
                         className=" col-xs-5 col-sm-5 col-md-4 col-lg-4">
-                        <select class="form-control">
+                        <select class="form-control" onChange={this.gotoRestPage}>
                             <option>Select Restaurants</option>
                             {this.renderRestaurants(this.state.restaurants)}
                         </select>
@@ -80,4 +87,4 @@ class Search extends Component {
 
 }
 
-export default Search
+export default withRouter(Search)

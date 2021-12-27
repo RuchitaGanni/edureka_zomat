@@ -46,7 +46,7 @@ class DetailsHome extends Component {
                     <div class="top1">
                         <div className="restMainDiv">
                             <div className="restImageDiv">
-                                <img src={this.state.restData.restaurant_thumb} alt={this.state.restData.restaurant_name} id="restImage" />
+                                <img src={this.state.restData.restaurant_thumb?this.state.restData.restaurant_thumb:"/assests/loader2.gif"} alt={this.state.restData.restaurant_name} id="restImage" />
                             </div>
 
                         </div>
@@ -68,7 +68,7 @@ class DetailsHome extends Component {
                                 <button className="btn btn-danger" onClick={this.proceed} ><span id="placeOrdertxt">Place Order</span></button>
                             </div>
                             <div>
-                                <h3>Order Total: {this.state.total} </h3>
+                                <h3>Order Total: &#8377;  {this.state.total} </h3>
 
                             </div>
                         </div>
