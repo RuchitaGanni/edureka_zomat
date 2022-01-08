@@ -1,4 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import CusineFilter from './CusineFilter'
+import CostFilter from './CostFilter'
+import SortFilter from './SortFilter'
 import './Filter.css';
 class Filter extends Component {
     render() {
@@ -10,7 +13,7 @@ class Filter extends Component {
                             <span className="filter_span">Filter</span>
                         </div>
                         <div className="filter_search">
-                            <div className="filtersSections1">
+                            {/* <div className="filtersSections1">
 
                                 <span className="filter_search_title">Search Locations</span>
 
@@ -23,53 +26,10 @@ class Filter extends Component {
                                     <option>Kolkata</option>
                                 </select>
 
-                            </div>
-                            <div className="filtersSections2">
-
-                                <span className="filter_cusines">CUSINES </span>
-
-                                <div className="filter_checkbox">
-                                    <div>
-                                        <input type="checkbox" value="South" /><label>South Indian</label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" value="Chineese" /><label>Chineese</label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" value="Mexican" /><label>Chineese</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="filtersSections3">
-
-                                <span className="filter_persons">Choose for </span>
-
-                                <div className="filter_checkbox">
-                                    <div>
-                                        <input type="radio" /><label>One</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" /><label>Two</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" /><label>Three</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="filtersSections4">
-
-                                <span className="filter_persons">Sort </span>
-
-                                <div className="filter_checkbox">
-                                    <div>
-                                        <input type="radio" /><label>Pice low to high</label>
-                                    </div>
-                                    <div>
-                                        <input type="radio" /><label>Price high to low</label>
-                                    </div>
-
-                                </div>
-                            </div>
+                            </div> */}
+                            <CusineFilter />
+                            <CostFilter />
+                            <SortFilter />
                         </div>
                     </div>
                 </div>

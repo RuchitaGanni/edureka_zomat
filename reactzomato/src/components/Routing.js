@@ -6,6 +6,8 @@ import MainBody from './MainBody/MainBody'
 import DetailsHome from './Details/DetailsHome'
 import FinalOrder from './FinalOrders/FinalOrder'
 import ViewOrders from './FinalOrders/ViewOrders';
+import Login from './Login/Login'
+import Signup from './Login/Signup'
 const Routing = () => {
    
         return (
@@ -16,7 +18,9 @@ const Routing = () => {
                 <Route  path="/filter/:mealTypeId" component={MainBody}/>
                 <Route path="/menu/:restid" component={DetailsHome}/>
                 <Route path="/placeOrder/:restName" component={FinalOrder}/>
-                <Route path="/viewOrders" component={ViewOrders}/>
+                <Route path="/viewBooking" component={ViewOrders}/>
+                <Route path="/Login" component={Login}/>
+                <Route path="/Signup" component={Signup}/>
             </BrowserRouter>
         )
     

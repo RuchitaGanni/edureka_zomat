@@ -46,6 +46,14 @@
    
 }
 
+.dropdown-toggle{
+    background-color:rgb(238, 2, 2) !important;
+    
+}
+.dropdown-menu>li>a {
+    color:black !important;
+}
+
 /* span {
     margin-left: 5px;
     margin-top: 5px;

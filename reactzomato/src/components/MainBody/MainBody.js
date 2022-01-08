@@ -1,7 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import Filter from './Filter/Filter';
+import CusineFilter from './Filter/CusineFilter'
+import CostFilter from './Filter/CostFilter'
+import SortFilter from './Filter/SortFilter'
 import List from './List/List';
 import './MainBody.css';
+import './Filter/Filter.css';
 import axios from 'axios';
 const url = "https://edu-zomatoapp.herokuapp.com/filter";
 class MainBody extends Component {
@@ -10,9 +14,12 @@ class MainBody extends Component {
     constructor(props) {
         super(props);
 
-        this.state={
-            restList:''
+        this.state = {
+            restList: ''
         }
+    }
+    setDataPerFilter = (data) => {
+        this.setState({ restList: data })
     }
 
     render() {
@@ -23,20 +30,35 @@ class MainBody extends Component {
                         <h3>Quick Search Results</h3>
                     </div>
                     <div className="page_content">
-                        <Filter />
-                        <List restData={this.state.restList}/>
+                        {/* <Filter /> */}
+                        <div className="filter">
+                            <div className="filter_elements">
+                                <div className="filter_heading">
+                                    <span className="filter_span">Filter</span>
+                                </div>
+                                <div className="filter_search">
+                                    <CusineFilter meal_Id={this.props.match.params.mealTypeId}
+                                        restPerCuisine={(data) => { this.setDataPerFilter(data) }} />
+                                    <CostFilter meal_Id={this.props.match.params.mealTypeId}
+                                        restPerCost={(data) => { this.setDataPerFilter(data) }} />
+                                    <SortFilter meal_Id={this.props.match.params.mealTypeId}
+                                        restPerSort={(data) => { this.setDataPerFilter(data) }} />
+                                </div>
+                            </div>
+                        </div>
+                        <List restData={this.state.restList} />
                     </div>
                 </div>
             </Fragment>
         )
     }
-    componentDidMount(){
+    componentDidMount() {
         const mealId = this.props.match.params.mealTypeId;
         axios.get(`${url}/${mealId}`)
-        .then((res) => {
-            console.log(res.data,'res')
-            this.setState({restList:res.data})
-        })
+            .then((res) => {
+                console.log(res.data, 'res')
+                this.setState({ restList: res.data })
+            })
     }
 }
 export default MainBody;
